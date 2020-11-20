@@ -1,4 +1,4 @@
 dep:
-	go mod download
+	go mod download -x
 build:
 	go build -v cmd/main.go
