@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"encoding/json"
 	"net/http"
 	"strconv"
 
@@ -9,8 +10,6 @@ import (
 	"github.com/longndb/simple-rest-go/pkg/dto"
 	"github.com/tidwall/gjson"
 )
-
-const json = `{"name":{"first":"Janet","last":"Prichard"},"age":47}`
 
 func Test() {
 	value := gjson.Get(json, "name.last")
