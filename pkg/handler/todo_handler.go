@@ -8,12 +8,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/longndb/simple-rest-go/pkg/data"
 	"github.com/longndb/simple-rest-go/pkg/dto"
-	"github.com/tidwall/gjson"
 )
-
-func Test() {
-	value := gjson.Get(json, "name.last")
-}
 
 func GetAllTodo(writer http.ResponseWriter, request *http.Request) {
 	responseWithJson(writer, http.StatusOK, data.Todos)
