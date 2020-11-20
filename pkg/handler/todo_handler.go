@@ -1,14 +1,20 @@
 package handler
 
 import (
-	"encoding/json"
 	"net/http"
 	"strconv"
 
 	"github.com/gorilla/mux"
 	"github.com/longndb/simple-rest-go/pkg/data"
 	"github.com/longndb/simple-rest-go/pkg/dto"
+	"github.com/tidwall/gjson"
 )
+
+const json = `{"name":{"first":"Janet","last":"Prichard"},"age":47}`
+
+func Test() {
+	value := gjson.Get(json, "name.last")
+}
 
 func GetAllTodo(writer http.ResponseWriter, request *http.Request) {
 	responseWithJson(writer, http.StatusOK, data.Todos)
